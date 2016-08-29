@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codename: MyString
+  quentity: 1
+  size: MyString
+  price: 9.99
+  discount: 9.99
+  Category: one
+  Brand: one
+  Color: one
+
+two:
+  codename: MyString
+  quentity: 1
+  size: MyString
+  price: 9.99
+  discount: 9.99
+  Category: two
+  Brand: two
+  Color: two
