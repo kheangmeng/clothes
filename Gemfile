@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 
 # For user Acc
 gem 'devise'
+# Upload multiple image
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
