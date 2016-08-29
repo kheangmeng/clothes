@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'page/about'
+
+  get 'page/contact'
+
   devise_for :users
 	root "products#index"
   resources :products
