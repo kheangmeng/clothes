@@ -32,6 +32,9 @@ gem 'devise'
 # Upload multiple image
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
+# For searching
+gem 'ransack'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
