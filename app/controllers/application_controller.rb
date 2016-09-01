@@ -9,4 +9,11 @@ class ApplicationController < ActionController::Base
 	 #    user_params.permit(:username, :phone, :address)
 	 #  end
   # end
+  before_filter :categoryBar
+
+  protected
+  
+  def categoryBar
+  	@cateTag = Category.all
+  end
 end

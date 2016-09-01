@@ -48,5 +48,7 @@
   <%= image_tag(@product.images[0]) %>
 </p> -->
 <% end %>
+<% if current_user.admin === true %>
 <%= link_to 'Edit', edit_product_path(@product) %> |
+<% end %>
 <%= link_to 'Back', products_path %>

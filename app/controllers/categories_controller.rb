@@ -1,12 +1,15 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :categoryPro
   # GET /categories
   # GET /categories.json
   def index
     @categories = Category.all
   end
 
+  def categoryPro
+    @myProducts = Product.where(Category_id: params[:id])
+  end
   # GET /categories/new
   def new
     @category = Category.new
