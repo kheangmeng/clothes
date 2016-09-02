@@ -28,10 +28,10 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.codename %></td>
-        <td><%= product.quentity %></td>
+        <td><%= check_stock(product) %></td>
         <td><%= product.size %></td>
-        <td><%= product.price %></td>
-        <td><%= product.discount %></td>
+        <td><%= number_to_currency(product.price) %></td>
+        <td><%= check_discount(product) %></td>
         <td><%= product.Category.name %></td>
         <td><%= product.Brand.name %></td>
         <td><%= product.Color.name %></td>

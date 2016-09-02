@@ -9,6 +9,7 @@
       <th>Quentity</th>
       <th>Color</th>
       <th>Price</th>
+      <th>Discount</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +19,10 @@
       <tr>
         <td><%= pro.codename %></td>
         <td><%= pro.size %></td>
-        <td><%= pro.quentity %></td>
+        <td><%= check_stock(pro) %></td>
 				<td><%= pro.Color.name %></td>
-				<td><%= pro.price %></td>
+				<td><%= number_to_currency(pro.price) %></td>
+        <td><%= check_discount(pro) %></td>
       </tr>
     <% end %>
   </tbody>
