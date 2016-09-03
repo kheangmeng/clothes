@@ -1,4 +1,4 @@
-<p>
+<!-- <p>
   <strong>Codename:</strong>
   <%= @product.codename %>
 </p>
@@ -42,15 +42,123 @@
 <p>
   <strong>img:</strong>
   <%= image_tag(p) %>
-</p>
+</p> -->
+
+
 <!-- <p>
   <strong>img:</strong>
   <%= image_tag(@product.images[0]) %>
+  <% end %>
 </p> -->
-<% end %>
+
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+          <h1 class="page-header">Product Detail</h1>
+        </div>
+                <!-- /.col-lg-12 -->
+    </div>
+<!-- /.row -->
+            <div class="row">
+              
+                <div class="col-lg-2 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                
+                                <div class="col-xs-10">
+                                    <div>Brand</div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                            <div class="panel-footer">
+                              <% @brands.each do |brand| %>
+                                <li><a href=""><%= brand.name %></a></li>
+                              <% end %>
+                               <!--  <li><a href="">Adidas</a></li>
+                                <li><a href="">Nike</a></li>
+                                <li><a href="">lacost</a></li>
+                                <li><a href="">Boss</a></li>
+                                <li><a href="">Hazad</a></li>
+                                <li><a href="">Arrow</a></li>
+                                <li><a href="">Valentino</a></li> -->
+                            </div>
+                        
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-5x"></i>
+                                </div>
+                                <div class="col-xs-6">
+                                    
+                                    <div>Detail</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                            <div class="panel-body">
+                                <strong>Codename:</strong>  <%= @product.codename %>
+                                <br /><br />
+                                <strong>Quentity:</strong>  <%= check_stock(@product) %>
+                                <br /><br />
+                                <strong>Size:</strong>  <%= @product.size %>
+                                <br /><br />
+                                <strong>Price:</strong>  <%= number_to_currency(@product.price) %>
+                                <br /><br />
+                                <strong>Discount:</strong>  <%= check_discount(@product) %>
+                                <br /><br />
+                                <strong>Category:</strong>  <%= @product.Category.name %>
+                                <br /><br />
+                                <strong>Brand:</strong>  <%= @product.Brand.name %>
+                                <br /><br />
+                                <strong>Color:</strong>  <%= @product.Color.name %>
+
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-5x"></i>
+                                </div>
+                                <div class="col-xs-6 ">
+                                    
+                                    <div>More images</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+      
+                            <div class="panel-body">
+                              <% onlythree = 0 %>
+                              <% @product.images.each do |p| %>
+                                <% onlythree += 1 %>
+                                <% if onlythree <= 3 %>
+                                  <div class="col-xs-4">
+                                    <%= image_tag(p, size: "180x268") %>
+                                  </div>
+                                <% end %>
+                              <% end %>  
+                            </div>
+                    </div>
+                </div>
+            
+            </div>
+</div>    
 <% if user_signed_in? %>
   <% if current_user.admin === true %>
-  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-link" %> |
   <% end %>
 <% end %>  
-<%= link_to 'Back', products_path %>
+<%= link_to 'Back', products_path, class:"btn btn-link" %>

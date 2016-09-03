@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 	root "products#index"
   resources :products
   get 'adminPage' => 'products#adminPage', as: 'adminPage'
+  get 'customerPage' => 'products#customerPage', as: 'customerPage'
   resources :colors, except: [:show, :destroy] 
   resources :brands, except: [:show, :destroy]
   resources :categories, except: [:show, :destroy]

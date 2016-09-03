@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
   def index
     @search = Product.search(params[:q])
     @products = @search.result
+    @brands = Brand.all
   end
 
   def adminPage
@@ -14,9 +15,14 @@ class ProductsController < ApplicationController
     @products = @search.result
   end
 
+  def customerPage
+    
+  end
+
   # GET /products/1
   # GET /products/1.json
   def show
+    @brands = Brand.all
   end
 
   # GET /products/new
