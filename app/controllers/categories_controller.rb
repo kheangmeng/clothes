@@ -8,7 +8,9 @@ class CategoriesController < ApplicationController
   end
 
   def categoryPro
-    @myProducts = Product.where(Category_id: params[:id])
+    # @myProducts = Product.where(Category_id: params[:id])
+    @products = Product.where(Category_id: params[:id])
+    @brands = Brand.all
   end
   # GET /categories/new
   def new

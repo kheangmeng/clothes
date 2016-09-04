@@ -1,55 +1,4 @@
-<!-- <p>
-  <strong>Codename:</strong>
-  <%= @product.codename %>
-</p>
 
-<p>
-  <strong>Quentity:</strong>
-  <%= check_stock(@product) %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @product.size %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= number_to_currency(@product.price) %>
-</p>
-
-<p>
-  <strong>Discount:</strong>
-  <%= check_discount(@product) %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @product.Category.name %>
-</p>
-
-<p>
-  <strong>Brand:</strong>
-  <%= @product.Brand.name %>
-</p>
-
-<p>
-  <strong>Color:</strong>
-  <%= @product.Color.name %>
-</p>
-
-<% @product.images.each do |p| %>
-<p>
-  <strong>img:</strong>
-  <%= image_tag(p) %>
-</p> -->
-
-
-<!-- <p>
-  <strong>img:</strong>
-  <%= image_tag(@product.images[0]) %>
-  <% end %>
-</p> -->
 
 
 <div id="page-wrapper">
@@ -76,14 +25,7 @@
                             <div class="panel-footer">
                               <% @brands.each do |brand| %>
                                 <li><a href=""><%= brand.name %></a></li>
-                              <% end %>
-                               <!--  <li><a href="">Adidas</a></li>
-                                <li><a href="">Nike</a></li>
-                                <li><a href="">lacost</a></li>
-                                <li><a href="">Boss</a></li>
-                                <li><a href="">Hazad</a></li>
-                                <li><a href="">Arrow</a></li>
-                                <li><a href="">Valentino</a></li> -->
+                              <% end %>        
                             </div>
                         
                     </div>

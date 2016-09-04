@@ -1,6 +1,6 @@
 class BrandsController < ApplicationController
   before_action :set_brand, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :brandPro
   # GET /brands
   # GET /brands.json
   def index
@@ -10,6 +10,11 @@ class BrandsController < ApplicationController
   # GET /brands/new
   def new
     @brand = Brand.new
+  end
+
+  def brandPro
+    @products = Product.where(Brand_id: params[:id])
+    @brands = Brand.all
   end
 
   # GET /brands/1/edit
