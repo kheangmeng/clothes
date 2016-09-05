@@ -1,5 +1,12 @@
-<h1>Editing Brand</h1>
+<% if current_user.admin.eql?(true)  %>
+	<h1>Editing Brand</h1>
 
-<%= render 'form', brand: @brand %>
+	<%= render 'form', brand: @brand %>
 
-<%= link_to 'Back', brands_path %>
+	<%= link_to 'Back', brands_path %>
+
+<% else %>
+
+  <h1>You don't have permission to access this page</h1>
+
+<% end %>

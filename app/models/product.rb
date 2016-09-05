@@ -14,5 +14,15 @@ class Product < ApplicationRecord
  #  	with:    /\w+.(gif|jpg|png|jpeg)\z/i,
  #  	message: "must reference a GIF, JPG, or PNG,JPEG image"
 	# 	}
+
+	# number_field (option)
+ #    :min - The minimum acceptable value.
+
+ #    :max - The maximum acceptable value.
+
+ #    :in - A range specifying the :min and :max values.
+
+ #    :step - The acceptable value granularity.
+
 	
 end

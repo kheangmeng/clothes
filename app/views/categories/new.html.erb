@@ -1,5 +1,12 @@
+<% if current_user.admin.eql?(true)  %>
 <h1>New Category</h1>
 
 <%= render 'form', category: @category %>
 
 <%= link_to 'Back', categories_path %>
+
+<% else %>
+
+  <h1>You don't have permission to access this page</h1>
+
+<% end %>

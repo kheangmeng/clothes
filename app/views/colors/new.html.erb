@@ -1,5 +1,12 @@
-<h1>New Color</h1>
+<% if current_user.admin.eql?(true)  %>	
+	<h1>New Color</h1>
 
-<%= render 'form', color: @color %>
+	<%= render 'form', color: @color %>
 
-<%= link_to 'Back', colors_path %>
+	<%= link_to 'Back', colors_path %>
+
+<% else %>
+
+  <h1>You don't have permission to access this page</h1>
+
+<% end %>
