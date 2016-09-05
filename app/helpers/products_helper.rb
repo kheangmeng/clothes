@@ -14,4 +14,12 @@ module ProductsHelper
 			content_tag(:strong, number_to_currency(product.discount))
 		end
 	end
+
+	def check_price(product)
+		if product.price > product.discount
+			true
+		else
+			false
+		end
+	end
 end

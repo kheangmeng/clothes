@@ -46,15 +46,20 @@ class ProductsController < ApplicationController
       @product = Product.new(product_params)
       @product.user_id = current_user.id
 
-      respond_to do |format|
-        if @product.save
-          format.html { redirect_to @product, notice: 'Product was successfully created.' }
-          format.json { render :show, status: :created, location: @product }
-        else
-          format.html { render :new }
-          format.json { render json: @product.errors, status: :unprocessable_entity }
+      if @product.price > @product.discount
+        respond_to do |format|
+          if @product.save
+            format.html { redirect_to @product, notice: 'Product was successfully created.' }
+            format.json { render :show, status: :created, location: @product }
+          else
+            format.html { render :new }
+            format.json { render json: @product.errors, status: :unprocessable_entity }
+          end
         end
+      else
+        redirect_to new_product_path, notice: 'discount field must be less than price field.' 
       end
+      
     else
       redirect_to products_path, notice: 'Not allow to ADD product.'  
     end  
