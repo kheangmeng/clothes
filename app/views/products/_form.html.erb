@@ -45,20 +45,32 @@
     <%= f.text_field :discount, class:"form-control", placeholder:"Discount" %>
   </div>
 
-   <div class="form-group">
+  <!--  <div class="form-group">
     <%= f.label :Category_id %>
     <%= f.text_field :Category_id, class:"form-control", placeholder:"Category_id" %>
+  </div> -->
+  <!-- <div class="form-group">
+    <%= f.select :Category_id, [ 'Cell', 'Work', 'Office', 'Home', 'Other' ], :prompt => 'Select One', class:"form-control" %>
+  </div> -->
+ 
+  <div class="form-group">
+    <%= f.label :Category_id %>
+    <%= f.select :Category_id, options_for_select(@cates.collect{ |u| [u.name, u.id] },
+      @product.Category_id), {:include_blank => '---select---'} %>
   </div>
 
   <div class="form-group">
     <%= f.label :Brand_id %>
-    <%= f.text_field :Brand_id, class:"form-control", placeholder:"Brand_id" %>
+    <%= f.select :Brand_id, options_for_select(@brands.collect{ |u| [u.name, u.id] },
+      @product.Brand_id), {:include_blank => '---select---'} %>
   </div>
 
   <div class="form-group">
     <%= f.label :Color_id %>
-    <%= f.text_field :Color_id, class:"form-control", placeholder:"Color_id" %>
+    <%= f.select :Color_id, options_for_select(@colors.collect{ |u| [u.name, u.id] },
+      @product.Color_id), {:include_blank => '---select---'} %>
   </div>
+
   <div class="form-group">
     <%= f.label :images %>
     <%= f.file_field :images, multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>

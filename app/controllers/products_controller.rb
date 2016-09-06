@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
- # before_action :set_values, only: [:new, :edit]
+  before_action :set_values, only: [:new, :edit]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /products
@@ -30,6 +30,7 @@ class ProductsController < ApplicationController
   def new
     if current_user.admin === true
       @product = Product.new
+  #    @cates = Category.all
     else
       redirect_to products_path, notice: 'Not allow to Add product.'  
     end 
@@ -37,6 +38,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+  #  @cates = Category.all
   end
 
   # POST /products
@@ -104,7 +106,7 @@ class ProductsController < ApplicationController
     end
 
     def set_values
-      @categories = Category.all
+      @cates = Category.all
       @colors = Color.all
       @brands = Brand.all
     end
